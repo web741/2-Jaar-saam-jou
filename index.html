@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="af">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171311">
+    <meta name="description" content="Twee jaar se memories, net ons twee.">
+    <title>Ons twee — 2 jaar saam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="photos.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="slideshow" aria-label="Ons twee se foto slideshow">
+        <div class="photo-backdrop" aria-hidden="true"></div>
+        <header class="topbar">
+          <a class="wordmark" href="#top" aria-label="Ons twee, terug boontoe">
+            <span class="wordmark-heart" aria-hidden="true">♥</span>
+            <span>ons twee</span>
+          </a>
+          <span class="top-note">’n klein storie oor ons</span>
+          <a class="jump-link" href="#memories">ons memories <span aria-hidden="true">↓</span></a>
+        </header>
+
+        <div class="slide-layout" id="top">
+          <div class="love-note">
+            <p class="eyebrow"><span class="eyebrow-line"></span> 2 jaar saam</p>
+            <h1>Twee jaar.<br><em>Net ons twee.</em></h1>
+            <p class="intro">Van daai eerste memories tot nou — ek sal elke keer weer vir jou kies.</p>
+            <div class="date-badge">
+              <span class="date-heart" aria-hidden="true">♥</span>
+              <span><strong id="slide-date">Ons storie</strong><small id="slide-month">begin hier</small></span>
+            </div>
+          </div>
+
+          <div class="photo-stage" id="stage">
+            <div class="photo-frame">
+              <img class="slide-photo" id="slide-photo" src="" alt="" fetchpriority="high">
+              <div class="photo-shade" aria-hidden="true"></div>
+              <div class="photo-caption">
+                <span class="caption-dot" aria-hidden="true"></span>
+                <span id="photo-caption">’n memory van ons</span>
+              </div>
+              <button class="expand-button" id="expand-button" type="button" aria-label="Maak die foto groter" title="Maak groter">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"/></svg>
+              </button>
+            </div>
+            <div class="photo-counter"><span id="current-number">01</span><span class="counter-divider">/</span><span id="total-number">00</span></div>
+          </div>
+        </div>
+
+        <div class="controls-wrap">
+          <audio id="song-player" preload="metadata" hidden>
+            <source src="./Jamie%20Miller%20-%20Babydoll%20feat.%20Antonio%20Cipriano%20%5B8g25GeJgxgs%5D.mp3" type="audio/mpeg">
+            Jou browser kan nie hierdie MP3 speel nie.
+          </audio>
+          <div class="controls">
+            <div class="controls-label"><span class="sound-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="play-status">druk play vir ons song</span></div>
+            <div class="control-buttons">
+              <button class="icon-button" id="previous-button" type="button" aria-label="Vorige foto" title="Vorige foto (←)">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button class="play-button" id="play-button" type="button" aria-label="Speel song en slideshow" title="Speel song en slideshow">
+                <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+                <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z"/></svg>
+              </button>
+              <button class="icon-button" id="next-button" type="button" aria-label="Volgende foto" title="Volgende foto (→)">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+            <span class="auto-note">elke memory, op sy tyd</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Vordering deur die slideshow" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+            <span class="progress-fill" id="progress-fill"></span>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#memories"><span>scroll vir meer</span><i aria-hidden="true"></i></a>
+      </section>
+
+      <section class="memories-section" id="memories">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> alles wat ons is</p>
+            <h2>Ons storie, <em>foto vir foto.</em></h2>
+          </div>
+          <p class="section-note">Tik op enige foto om terug te spring na daai memory.</p>
+        </div>
+        <div class="timeline" id="timeline" aria-label="Foto’s in datumvolgorde"></div>
+        <footer class="footer-note">
+          <span>gemaak met baie liefde</span>
+          <span aria-label="liefde">♥</span>
+          <span>vir ons 2 jaar</span>
+        </footer>
+      </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Maak toe">×</button>
+      <img id="lightbox-photo" src="" alt="">
+      <span id="lightbox-date"></span>
+    </div>
+  </body>
+</html>
